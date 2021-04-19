@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "StakTree"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Hyuntak Jin"
+name                     : "Hyeontak Jin"
 description              : "? -> !을 위한 개발일기."
 url                      : "https://staktree.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
