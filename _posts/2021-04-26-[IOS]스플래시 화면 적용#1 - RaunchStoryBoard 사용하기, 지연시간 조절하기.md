@@ -8,6 +8,8 @@ category : IOS
 typora-copy-image-to: ..\images\2021-04-26
 
 ---
+LaunchScreen 사용하기, 딜레이시간 조절하기
+
 
 ###### 소개
 
