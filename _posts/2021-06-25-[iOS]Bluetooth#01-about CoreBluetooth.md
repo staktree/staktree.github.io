@@ -35,7 +35,7 @@ typora-copy-images-to: ../images/2021-06-25
 
 ###### CoreBluetooth에 대해 자세히 알아봅시다.
 
-![1](/Users/hyeuntagjin/Documents/staktree.github.io/images/2021-06-25/1.png)
+![1](/images/2021-06-25/1.png)
 
 [애플공식문서](https://developer.apple.com/documentation/corebluetooth)를 보면 CoreBluetooth에 대해서 조금 더 이해할 수 있습니다! CoreBluetooth에 대한 개요를 한번 읽어봅시다.  
 
@@ -67,7 +67,7 @@ typora-copy-images-to: ../images/2021-06-25
 
 
 
-![2](/Users/hyeuntagjin/Documents/staktree.github.io/images/2021-06-25/2.png)
+![2](/images/2021-06-25/2.png)
 
 
 
@@ -111,7 +111,7 @@ typora-copy-images-to: ../images/2021-06-25
 
 
 
-![3](/Users/hyeuntagjin/Documents/staktree.github.io/images/2021-06-25/3.png)
+![3](/images/2021-06-25/3.png)
 
 
 
