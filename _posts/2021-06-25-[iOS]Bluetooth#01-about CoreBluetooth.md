@@ -105,7 +105,7 @@ typora-copy-images-to: ../images/2021-06-25
 
 
 
-**CBCentralManager는 Central에서 수행하는 discover(검색), connect(연결)를 담당하는 클래스**입니다. **검색된 Peripheral들을 CBPeripehral 객체로 관리하며Peripheral에 대한 연결을 수행합니다. 연결된 Peripheral은 CBPeripheral로 저장되며 이를 통해 데이터 통신이 수행됩니다. ** **이 모든 작업들은 CBCentralManagerDelegate과 CBPeripheralDelegate에 의해 지원**됩니다. 
+**CBCentralManager는 Central에서 수행하는 discover(검색), connect(연결)를 담당하는 클래스**입니다. **검색된 Peripheral들을 CBPeripehral 객체**로 관리하며 Peripheral에 대한 연결을 수행합니다. **연결된 Peripheral도 마찬가지로 CBPeripheral 객체**로 저장되며 이를 통해 데이터 통신이 수행됩니다. **이 모든 작업들은 CBCentralManagerDelegate과 CBPeripheralDelegate에 의해 지원**됩니다. 
 
 <br/><br/>
 
