@@ -143,7 +143,7 @@ class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
 
 
 
-CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또, CoreBluetooth에 필요한 NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 프로토콜을 추가해주세요. 그 다음으로 **centralManagerDidUpdateState(_ central :)** 추가합니다. 이는 **CBCentralManagerDelegate에서 필수로 요구하는 메서드**인데요. **Central 기기의  블루투스 상태 변화할 때마다 호출되며, Central에서 BLE를 사용할 수 있는지 확인하기 위해 꼭 필요합니다.** 이제 변수를 선언해 볼까요?  **centralManager와 connectedPeripheral**를 선언하였는데요. 각각 CBCentralManager와 CBPeripheral 객체로, **Central 기기를 관리하는 역할과 연결된 Peripheral(주변 기기)를 관리하는 역할**을 수행합니다. 추가적으로 **현재 연결을 시도하고 있는 주변 기기를 관리하기 위해 pendingPeripheral**을 선언하였습니다. 또, 데이터 통신을 하기 위해서 **연결된 기기의  characteristic**과 **기기의 응답 여부**를 알고 있어야하는데 이를 저장하기 위해 **writeCharacteristic**과 **writeType**를 선언하였습니다.
+CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또, CoreBluetooth에 필요한 NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 프로토콜을 추가해주세요. 그 다음으로 **centralManagerDidUpdateState(_ central :)** 추가합니다. 이는 **CBCentralManagerDelegate에서 필수로 요구하는 메서드**인데요. **Central 기기의  블루투스 상태 변화할 때마다 호출되며, Central에서 BLE를 사용할 수 있는지 확인하기 위해 꼭 필요합니다.** 이제 변수를 선언해 볼까요?  **centralManager와 connectedPeripheral**를 선언하였는데요. 각각 CBCentralManager와 CBPeripheral 객체로, **Central 기기를 관리하는 역할과 연결된 Peripheral(주변 기기)를 관리하는 역할**을 수행합니다. 추가적으로 **현재 연결을 시도하고 있는 주변 기기를 관리하기 위해 pendingPeripheral**을 선언하였습니다. 또, 데이터 통신을 하기 위해서 **연결된 기기의  characteristic**와 **기기의 응답 여부**를 알고 있어야하는데 이를 저장하기 위해 **writeCharacteristic**과 **writeType**를 선언하였습니다.
 
 <br/><br/>
 
@@ -151,17 +151,17 @@ CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또,
 
 ![peripheraldata](/images/2021-06-26/peripheraldata.png)
 
+<br/><br/>
 
 
 
-
-다음으로 **Peripheral의 Service와 Characteristic을 찾기 위한 UUID**를 설정해야합니다. 하나의 Peripheral은 여러 개의 Service를 가질 수 있으며, 하나의 Service는 여러 개의 Characteristic을 갖고 있을 수 있습니다. CoreBluetooth는 이 구조를  **CBPeripheral, CBService, CBCharacteristic**로 표현합니다. CoreBluetooth에서 기기를 검색할 때,  주변의 모든 Service와 Characteristic에 대한 Peripheral을 검색할 수도 있지만 이는 많은 배터리를 소모시킵니다. 따라서 **특정 Service와 Characteristic을 검색하는 것이 필요**한데요. 이를 위해 **serviceUUID와 characteristicUUID를 설정하여 해당 UUID를 가진 블루투스 기기만을 검색**하도록 합니다. serviceUUID는 'FFE0'로,  characteristicUUID는 'FFE1'로 설정하였는데요 . 이 UUID는 HM-10 모듈에서 기본적으로 포함하고 있는 Service와 Characteristic입니다. 원래 온도와 관련된 UUID라고 하는데 문자열 송수신이 가능하여 그대로 사용하시면 될 듯합니다.    
+다음으로 **Peripheral의 Service와 Characteristic을 찾기 위한 UUID**를 설정해야합니다. 하나의 Peripheral은 여러 개의 Service를 가질 수 있으며, 하나의 Service는 여러 개의 Characteristic을 갖고 있을 수 있습니다. CoreBluetooth는 이 구조를  **CBPeripheral, CBService, CBCharacteristic**로 표현합니다. CoreBluetooth에서 기기를 검색할 때,  주변의 모든 Service와 Characteristic에 대한 Peripheral을 검색할 수도 있지만 이는 많은 배터리를 소모시킵니다. 따라서 **특정 Service와 Characteristic을 검색하는 것이 필요**한데요. 이를 위해 **serviceUUID와 characteristicUUID를 설정하여 해당 UUID를 가진 블루투스 기기만을 검색**하도록 합니다. 저는 serviceUUID는 'FFE0'로,  characteristicUUID는 'FFE1'로 설정하였는데요. 이 UUID는 HM-10 모듈에서 기본적으로 포함하고 있는 Service와 Characteristic입니다. 원래 온도와 관련된 UUID라고 하는데 문자열 송수신이 가능하여 그대로 사용하시면 될 듯합니다.    
 
 <br/><br/> 
 
 
 
-기본적인 틀이 만들졌으니 이제 기능을 구현해봅시다. 
+기본적인 틀은 완성된 거 같군요! 이제 기능을 구현해봅시다. 
 
 <br/><br/>
 
@@ -178,11 +178,12 @@ CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또,
 **BluetoothSerial.swift**
 
 ~~~swift
- /// 기기 검색을 시작합니다. 연결이 가능한 모든 주변기기를 serviceUUID를 통해 찾아냅니다. 
+    /// 기기 검색을 시작합니다. 연결이 가능한 모든 주변기기를 serviceUUID를 통해 찾아냅니다. 
     func startScan() {
         guard centralManager.state == .poweredOn else { return }
        
-// CBCentralManager의 메서드인 scanForPeripherals를 호출하여 연결가능한 기기들을 검색합니다. 이 떄 withService 파라미터에 nil을 입력하면 모든 종류의 기기가 검색되고, 지금과 같이 serviceUUID를 입력하면 특정 serviceUUID를 가진 기기만을 검색합니다. 
+      // CBCentralManager의 메서드인 scanForPeripherals를 호출하여 연결가능한 기기들을 검색합니다. 이 떄 withService 파라미터에 nil을 입력하면 모든 종류의 기기가 검색되고, 지금과 같이         
+      // serviceUUID를 입력하면 특정 serviceUUID를 가진 기기만을 검색합니다. 
     	centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil) 
     
     	let peripherals = centralManager.retrieveConnectedPeripherals(withServices: [serviceUUID])
@@ -192,12 +193,12 @@ CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또,
     	}
 		}
 
-  /// 기기 검색을 중단합니다. 
+    /// 기기 검색을 중단합니다. 
     func stopScan() {
         centralManager.stopScan()
     }
 
-	 /// 파라미터로 넘어온 주변 기기를 CentralManager에 연결하도록 시도합니다.
+	  /// 파라미터로 넘어온 주변 기기를 CentralManager에 연결하도록 시도합니다.
     func connectToPeripheral(_ peripheral : CBPeripheral)
     {
         // 연결 실패를 대비하여 현재 연결 중인 주변 기기를 저장합니다.
@@ -205,7 +206,8 @@ CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또,
         centralManager.connect(peripheral, options: nil)
     }
 
- // CBCentralManagerDelegate에 포함되어 있는 메서드입니다. central 기기의 블루투스가 켜져있는지, 꺼져있는지 확인합니다. 확인하여 centralManager.state의 값을 .powerOn 또는 .powerOff로 변경합니다.
+    // CBCentralManagerDelegate에 포함되어 있는 메서드입니다. 
+    // central 기기의 블루투스가 켜져있는지, 꺼져있는지 확인합니다. 확인하여 centralManager.state의 값을 .powerOn 또는 .powerOff로 변경합니다.
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         pendingPeripheral = nil
         connectedPeripheral = nil
@@ -266,14 +268,13 @@ CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또,
         // 신호 강도와 관련된 코드를 작성합니다.(필요하다면 작성해주세요.)
     }
 
-
 ~~~
 
 <br/><br/>
 
 
 
-startScan()은 기기 검색을 시작하는 부분입니다. **centralManager.scanForPeripherals(withServices: , options: )을 호출하여 새로운 기기를 검색하는데**, 이 메서드는 **새로운 기기가 검색될 때마다** **centralManager(_ central:, didDiscover peripheral:, advertisementData:, rssi RSSI:)를 호출**합니다. centralManager(_ central:, didDiscover peripheral:, advertisementData:, rssi RSSI:)내에 TableView를 업데이트하는 코드를 작성하면, TableView에서 검색된 주변기기들을 확인할 수 있습니다. 그리고 **이미 검색된 기기들은 centralManager.retrieveConnectedPeripherals(withServices: )**로 다시 불러올 수 있는데, 검색을 한번 실행한 후 다시 실행했을 때를 대비하여 startScan()에 이미 검색되어 있는 기기들을 TableView로 표시하는 코드를 작성할 예정입니다. 
+startScan()은 기기 검색을 시작하는 부분입니다. **centralManager.scanForPeripherals(withServices: , options: )을 호출하여 새로운 기기를 검색하는데**, 이 메서드는 **새로운 기기가 검색될 때마다** **centralManager(_ central:, didDiscover peripheral:, advertisementData:, rssi RSSI:)를 호출**합니다. centralManager(_ central:, didDiscover peripheral:, advertisementData:, rssi RSSI:)내에 TableView를 업데이트하는 코드를 작성하면, TableView에서 검색된 주변기기들을 확인할 수 있습니다. 그리고 **이미 검색된 기기들은 centralManager.retrieveConnectedPeripherals(withServices: )**로 다시 불러올 수 있는데, 검색을 한번 실행한 후 다시 실행했을 때를 대비하여 startScan()에서 이미 검색되어 있던 기기들이 있다면TableView로 표시하는 코드를 작성할 예정입니다. 
 
 <br/><br/>
 
@@ -542,7 +543,7 @@ class ScanViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
 
-추가적으로 cell = tableView.dequeueReusableCell(withIdentifier: "ScanTableViewCell", for: indexPath) as? ScanTableViewCell에서 ScanTableViewCell이라는 커스텀 셀을 설정하기 위해서 설정해주어야 할 것들이 있습니다. 먼저 다시 스토리 보드로 돌아가 TableView의 TableCell 내에 Label를 추가합니다. 그 다음 TableCell의 identifier를 ScanTableViewCell로 설정합니다. 
+추가적으로 cell = tableView.dequeueReusableCell(withIdentifier: "ScanTableViewCell", for: indexPath) as? ScanTableViewCell에서 ScanTableViewCell이라는 **커스텀 셀을 설정하기 위해서 설정해주어야 할 것**들이 있습니다. 먼저 다시 스토리 보드로 돌아가 **TableView의 TableCell 내에 Label를 추가합니다. 그 다음 TableCell의 identifier를 ScanTableViewCell**로 설정합니다. 
 
 <br/><br/>
 
@@ -573,7 +574,7 @@ class ScanTableViewCell: UITableViewCell {
 
 <br/><br/>
 
-ScanTableViewCell 클래스를 선언하고 아까 추가했던 Label을 peripheralName에 연결합니다. tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)부분에서 Cell을 표현할 때 Peripheral의 이름을 파라미터로 하여 updatePeripheralName()을 호출하면 Cell의 Label이 peripheral의 이름으로 변경됩니다. 
+**ScanTableViewCell 클래스를 선언하고 아까 추가했던 Label을 peripheralName에 연결**합니다. tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)부분에서 Cell을 표현할 때 Peripheral의 이름을 파라미터로 하여 updatePeripheralName()을 호출하면 Cell의 Label이 peripheral의 이름으로 변경됩니다. 
 
 <br/><br/>
 
@@ -625,7 +626,7 @@ ScanTableViewCell 클래스를 선언하고 아까 추가했던 Label을 periphe
 
 
 
-다시 BluetoothSerial.swift로 돌아가서 TODO로 남겨놨던 부분을 채워주었습니다. startScan()과 centralManager(_ central: , didDiscover peripheral: , advertisementData: , rssi RSSI: )에서는 ScanViewController의 serialDidDiscoverPeripheral를 호출하도록 설정하였습니다. 여기서는 peripheral을 파라미터로 전달하여 ScanViewController의 peripheralList에 저장되도록 하고, TableView에 나타나도록 합니다. peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?)에서 연결이 완료되면 serialDidConnectPeripheral()를 호출하여 alert를 띄우고 ScanViewController 뷰를 dismiss 시키도록 합니다. 
+다시 **BluetoothSerial.swift로 돌아가서 TODO로 남겨놨던 부분을 채워주었습니다.** startScan()과 centralManager(_ central: , didDiscover peripheral: , advertisementData: , rssi RSSI: )에서는 ScanViewController의 serialDidDiscoverPeripheral를 호출하도록 설정하였습니다. 여기서는 peripheral을 파라미터로 전달하여 ScanViewController의 peripheralList에 저장되도록 하고, TableView에 나타나도록 합니다. peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?)에서 연결이 완료되면 serialDidConnectPeripheral()를 호출하여 alert를 띄우고 ScanViewController 뷰를 dismiss 시키도록 합니다. 
 
 <br/><br/>
 
