@@ -19,7 +19,7 @@ typora-copy-images-to: ../images/2021-06-02
 
 ###### 소개
 
-안녕하세요. 지난 포스팅에서 블루투스와 BLE, 그리고 iOS의 프레임 워크인 Core Bluetooth에 대해 알아보았는데요! 이번 시간에는 **Core Bluetooth를 활용하여 블루투스 기기를 검색하는 방법**에 대해서 알아보겠습니다. 지난 포스팅의 내용은 [[IOS]CoreBluetooth#01 - BLE와 CoreBluetooth란 무엇일까요?](ss)에서 확인할 수 있습니다!
+안녕하세요. 지난 포스팅에서 블루투스와 BLE, 그리고 iOS의 프레임 워크인 Core Bluetooth에 대해 알아보았는데요! 이번 시간에는 **Core Bluetooth를 활용하여 블루투스 기기를 검색하는 방법**에 대해서 알아보겠습니다. 지난 포스팅의 내용은 [[IOS]CoreBluetooth#01 - BLE와 CoreBluetooth란 무엇일까요?](https://staktree.github.io/ios/iOS-Bluetooth-01-about-CoreBluetooth/)에서 확인할 수 있습니다!
 
 <br/><br/>
 
