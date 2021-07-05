@@ -1,7 +1,7 @@
 ---
 layout: single 
 
-title: "[iOS]CoreBluetooth 활용하기#01 - BLE와 Core Bluetooth란 무엇일까요?"
+title: "[iOS]Core Bluetooth 활용하기#01 - BLE와 Core Bluetooth란 무엇일까요?"
 
 category: iOS
 
