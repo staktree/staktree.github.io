@@ -52,7 +52,7 @@ typora-copy-images-to: ../images/2021-06-02
 
 ###### 프로젝트 시작 전에
 
-![important](/Users/tak/Documents/staktree.github.io/images/2021-06-02/important.png)
+![important](/images/2021-06-26/important.png)
 
 <br/><br/>
 
@@ -64,7 +64,7 @@ typora-copy-images-to: ../images/2021-06-02
 
  
 
-​											  ![info](/Users/tak/Documents/staktree.github.io//images/2021-06-02/info.png)
+​											  ![info](/images/2021-06-26/info.png)
 
 <br/><br/>
 
@@ -82,7 +82,7 @@ Info.plist에 버전에 맞는 key를 추가하셨나요? 자! 그럼 이제 본
 
 <br/><br/>
 
-![centralperipheral](/Users/tak/Documents/staktree.github.io/images/2021-06-02/centralperipheral.png)
+![centralperipheral](/images/2021-06-26/centralperipheral.png)
 
 
 
@@ -149,7 +149,7 @@ CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또,
 
 
 
-![peripheraldata](/Users/tak/Documents/staktree.github.io/images/2021-06-02/peripheraldata.png)
+![peripheraldata](/images/2021-06-26/peripheraldata.png)
 
 
 
@@ -398,7 +398,7 @@ class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
 
 
 
-![view](/Users/tak/Documents/staktree.github.io/images/2021-06-02/view.png)
+![view](/images/2021-06-26/view.png)
 
 <br/><br/>
 
@@ -637,11 +637,11 @@ ScanTableViewCell 클래스를 선언하고 아까 추가했던 Label을 periphe
 
 ###### 결과
 
-<img src="/Users/tak/Documents/staktree.github.io/images/2021-06-02/IMG_1247.PNG" alt="IMG_1247" style="zoom:50%;" />
+<img src="/images/2021-06-26/IMG_1247.PNG" alt="IMG_1247" style="zoom:50%;" />
 
-<img src="/Users/tak/Documents/staktree.github.io/images/2021-06-02/IMG_1248.PNG" alt="IMG_1248" style="zoom:50%;" />
+<img src="/images/2021-06-26/IMG_1248.PNG" alt="IMG_1248" style="zoom:50%;" />
 
-<img src="/Users/tak/Documents/staktree.github.io/images/2021-06-02/IMG_1249.PNG" alt="IMG_1249" style="zoom:50%;" />
+<img src="/images/2021-06-26/IMG_1249.PNG" alt="IMG_1249" style="zoom:50%;" />
 
 
 
