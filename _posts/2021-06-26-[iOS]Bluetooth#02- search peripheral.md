@@ -143,7 +143,7 @@ class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
 
 
 
-CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또, CoreBluetooth에 필요한 NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 프로토콜을 추가해주세요. 그 다음으로 **centralManagerDidUpdateState(_ central :)** 추가합니다. 이는 CBCentralManagerDelegate에서 필수로 요구하는 메서드인데요. **Central 기기의  블루투스 상태 변화할 때마다 호출되며, Central에서 BLE를 사용할 수 있는지 확인하기 위해 꼭 필요합니다.** 이제 변수를 선언해 볼까요?  **centralManager와 connectedPeripheral**를 선언하였는데요. 각각 CBCentralManager와 CBPeripheral 객체로, **Central 기기를 관리하는 역할과 연결된 Peripheral(주변 기기)를 관리하는 역할**을 수행합니다. 추가적으로 현재 연결을 시도하고 있는 주변 기기를 관리하기 위해 pendingPeripheral을 선언하였습니다. 또, 데이터 통신을 하기 위해서 **연결된 기기의  characteristic**과 **기기의 응답 여부**를 알고 있어야하는데 이를 저장하기 위해 **writeCharacteristic**과 **writeType**를 선언하였습니다.
+CoreBluetooth를 import하고, BluetoothSerial Class를 선언해주세요. 또, CoreBluetooth에 필요한 NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 프로토콜을 추가해주세요. 그 다음으로 **centralManagerDidUpdateState(_ central :)** 추가합니다. 이는 **CBCentralManagerDelegate에서 필수로 요구하는 메서드**인데요. **Central 기기의  블루투스 상태 변화할 때마다 호출되며, Central에서 BLE를 사용할 수 있는지 확인하기 위해 꼭 필요합니다.** 이제 변수를 선언해 볼까요?  **centralManager와 connectedPeripheral**를 선언하였는데요. 각각 CBCentralManager와 CBPeripheral 객체로, **Central 기기를 관리하는 역할과 연결된 Peripheral(주변 기기)를 관리하는 역할**을 수행합니다. 추가적으로 **현재 연결을 시도하고 있는 주변 기기를 관리하기 위해 pendingPeripheral**을 선언하였습니다. 또, 데이터 통신을 하기 위해서 **연결된 기기의  characteristic**과 **기기의 응답 여부**를 알고 있어야하는데 이를 저장하기 위해 **writeCharacteristic**과 **writeType**를 선언하였습니다.
 
 <br/><br/>
 
