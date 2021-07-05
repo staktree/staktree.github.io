@@ -666,7 +666,7 @@ Serial View Controller의 scan 버튼을 클릭하면 Modal View로 Scan View Co
 
 <br/><br/>
 
-소스코드 : [https://github.com/staktree/iOSBluetoothSample](https://github.com/staktree/iOSBluetoothSample)
+**소스코드 :** [https://github.com/staktree/iOSBluetoothSample](https://github.com/staktree/iOSBluetoothSample)
 
 <br/><br/>
 
