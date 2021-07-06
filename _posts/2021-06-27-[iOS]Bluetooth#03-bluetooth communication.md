@@ -110,7 +110,7 @@ typora-copy-images-to: ../images/2021-06-27
 
 ###### Mission2. 데이터 통신을 위한 UI 제작하기
 
-<img src="/images/2021-06-27/1.PNG" alt="1" style="zoom: 67%;" />
+[1]<img src="/images/2021-06-27/1.PNG" alt="1" style="zoom: 67%;" />
 
 </br></br>
 
