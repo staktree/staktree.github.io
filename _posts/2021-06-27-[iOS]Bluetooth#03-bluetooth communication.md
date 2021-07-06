@@ -110,7 +110,7 @@ typora-copy-images-to: ../images/2021-06-27
 
 ###### Mission2. 데이터 통신을 위한 UI 제작하기
 
-<img src="/Users/hyeuntagjin/Documents/staktree.github.io/images/2021-06-03" alt="2021-06-21 23.22.41" style="zoom: 67%;" />
+<img src="/images/2021-06-27/1" alt="1" style="zoom: 67%;" />
 
 </br></br>
 
@@ -244,7 +244,7 @@ void loop() {
 
 
 
-<img src="/Users/hyeuntagjin/Documents/staktree.github.io/images/2021-06-03/IMG_1281.PNG" alt="IMG_1281" style="zoom:50%;" />
+<img src="images/2021-06-27/2" alt="2" style="zoom:50%;" />
 
 </br></br>
 
@@ -256,7 +256,7 @@ Scan 버튼을 눌러 Mission 3에서 코드를 업로드했던 아두이노 기
 
 
 
-<img src="/Users/hyeuntagjin/Documents/staktree.github.io/images/2021-06-03/IMG_1282.PNG" alt="IMG_1282" style="zoom:50%;" />
+<img src="/images/2021-06-27/3" alt="3" style="zoom:50%;" />
 
 
 
