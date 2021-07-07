@@ -110,7 +110,7 @@ typora-copy-images-to: ../images/2021-06-27
 
 ###### Mission2. 데이터 통신을 위한 UI 제작하기
 
-![1](/images/2021-06-27/1.PNG)
+![1](/images/2021-06-27/1.png)
 
 
 </br></br>
@@ -245,7 +245,7 @@ void loop() {
 
 
 
-![2](/images/2021-06-27/2.png)
+![2](/images/2021-06-27/2.PNG)
 
 </br></br>
 
@@ -257,7 +257,7 @@ Scan 버튼을 눌러 Mission 3에서 코드를 업로드했던 아두이노 기
 
 
 
-![3](/images/2021-06-27/3.png)
+![3](/images/2021-06-27/3.PNG)
 
 
 
