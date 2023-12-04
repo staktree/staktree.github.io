@@ -11,7 +11,9 @@ typora-copy-images-to: ../images/2021-06-27
 
 ---
 
+
 블로그 이전 : https://staktree.tistory.com/
+
 
 **Core Bluetooth를 활용해 블루투스 데이터 통신을 구현해봅시다.**
 
