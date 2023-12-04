@@ -10,6 +10,8 @@ tags : [iOS, swift, CoreBluetooth]
 typora-copy-images-to: ../images/2021-06-25
 
 ---
+블로그 이전 : https://staktree.tistory.com/
+
 
 **BLE와 Core Bluetooth에 대해 알아봅시다.**
 
