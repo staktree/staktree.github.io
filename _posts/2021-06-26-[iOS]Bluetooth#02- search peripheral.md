@@ -11,6 +11,8 @@ typora-copy-images-to: ../images/2021-06-26
 
 ---
 
+블로그 이전 : https://staktree.tistory.com/
+
 **Core Bluetooth를 활용해 BLE기기를 검색해봅시다.**
 
 <br/><br/>
